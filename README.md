@@ -23,6 +23,10 @@ Berikut hasil tampilan tugas:
 
 ![Tampilan Halaman](images/hasil.png)
 
+Tampilan Dark Mode
+
+![Tampilan Halaman](images/dark.png)
+
 Tampilan dirancang sederhana dengan kombinasi warna lembut agar mudah dibaca dan tidak membuat mata lelah.  
 Bagian kanan berisi fitur penampil waktu dan tombol ganti tema yang dikendalikan dengan JavaScript.
 
