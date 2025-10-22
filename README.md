@@ -23,7 +23,7 @@ Berikut hasil tampilan tugas:
 
 ![Tampilan Halaman](images/hasil.png)
 
-Tampilan Dark Mode
+Tampilan Dark Mode Otomatis aktif di malam hari  
 
 ![Tampilan Halaman](images/dark.png)
 
