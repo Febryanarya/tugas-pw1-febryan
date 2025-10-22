@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tugas Pemrograman Web 1 - Mochamad Arya Febryan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg1: #e6ebf0;
+      --bg2: #dfe7ea;
+      --card: #ffffff;
+      --accent: #4a5568;
+      --text: #2d3748;
+      --muted: #718096;
+      --panel-bg: #f8fafc;
+      --panel-text: #2d3748;
+    }
+
+    * {
+      box-sizing: border-box;
+      transition: background 0.6s ease, color 0.4s ease, border 0.4s ease, transform 0.3s ease;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: linear-gradient(270deg, var(--bg1), var(--bg2));
+      background-size: 400% 400%;
+      animation: gradientMove 20s ease infinite, fadeIn 1s ease;
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .paper {
+      width: min(900px, 95%);
+      background: var(--card);
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+      display: grid;
+      grid-template-columns: 1fr 270px;
+      overflow: hidden;
+      opacity: 0;
+      animation: slideUp 0.9s ease forwards;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .main { padding: 28px 34px; }
+
+    h1 {
+      margin: 0 0 10px 0;
+      color: var(--accent);
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .sub {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    p {
+      line-height: 1.7;
+      text-align: justify;
+      color: var(--text);
+    }
+
+    .decor {
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      margin: 18px 0;
+    }
+
+    .control {
+      background: #f9fafb;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-left: 1px solid #e5e7eb;
+    }
+
+    .clock, .greeting {
+      background: var(--panel-bg);
+      color: var(--panel-text);
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 12px;
+      text-align: center;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .controls-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    button {
+      flex: 1;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .btn {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn:hover {
+      background: #2d3748;
+      transform: scale(1.02);
+      box-shadow: 0 0 10px rgba(100,116,139,0.4);
+    }
+
+    .ghost {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+    }
+
+    .ghost:hover {
+      background: var(--accent);
+      color: #fff;
+      transform: scale(1.02);
+    }
+
+    .note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    @media (max-width: 800px) {
+      .paper { grid-template-columns: 1fr; }
+      .control { border-left: none; border-top: 1px solid #e5e7eb; }
+    }
+  </style>
+</head>
+<body>
+
+ <div class="paper" id="page">
+  <main class="main">
+    <h1>Tugas Pemrograman Web 1 - Mochamad Arya Febryan</h1>
+    <p class="sub">Halaman latihan pertemuan ke-5 mata kuliah Pemrograman Web 1.</p>
+
+    <div class="decor"></div>
+
+    <p>Halo! Saya <strong>Mochamad Arya Febryan</strong>. Halaman ini dibuat sebagai bagian dari latihan dasar pada mata kuliah Pemrograman Web 1 untuk memahami penggunaan HTML, CSS, dan JavaScript secara terintegrasi.</p>
+
+    <p>Desain halaman dibuat dengan gaya sederhana agar fokus tetap pada isi dan struktur kodenya. Warna yang digunakan bernuansa netral untuk menjaga keterbacaan dan memberikan tampilan yang bersih serta profesional.</p>
+
+    <p>Melalui latihan ini, saya memahami hubungan antara HTML sebagai struktur, CSS untuk pengaturan tampilan, dan JavaScript sebagai penambah interaktivitas. Dari latihan ini juga saya dapat melihat bagaimana ketiganya saling mendukung dalam pembuatan halaman web.</p>
+  </main>
+
+
+    <aside class="control">
+      <div>
+        <div class="greeting" id="greeting">Selamat datang.</div>
+        <div class="clock" id="clock">Klik tombol untuk menampilkan waktu</div>
+      </div>
+
+      <div>
+        <div class="controls-row">
+          <button class="btn" id="actionBtn">Tampilkan Waktu</button>
+          <button class="ghost" id="themeBtn">Ganti Tema</button>
+        </div>
+        <div class="note">Tugas Pemrograman Web 1 — Mochamad Arya Febryan</div>
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    const clock = document.getElementById("clock");
+    const greeting = document.getElementById("greeting");
+    const btn = document.getElementById("actionBtn");
+    const themeBtn = document.getElementById("themeBtn");
+
+    // Tema
+    const themes = [
+      { bg1: "#e6ebf0", bg2: "#dfe7ea", accent: "#4a5568", text: "#2d3748", card: "#ffffff", panelBg:"#f8fafc", panelText:"#2d3748" },
+      { bg1: "#d8e2dc", bg2: "#bcd0c7", accent: "#52796f", text: "#2f3e46", card: "#ffffff", panelBg:"#f8fafc", panelText:"#2f3e46" },
+      { bg1: "#fdf6ec", bg2: "#f5ebe0", accent: "#8d7b68", text: "#3e3e3e", card: "#ffffff", panelBg:"#ffffff", panelText:"#3e3e3e" },
+      { bg1: "#ddeaf1", bg2: "#c8d9e6", accent: "#4c6a92", text: "#243447", card: "#ffffff", panelBg:"#f8fafc", panelText:"#243447" },
+      { bg1: "#ede8e3", bg2: "#dfd8d0", accent: "#7a6f64", text: "#2b2b2b", card: "#ffffff", panelBg:"#f9f9f9", panelText:"#2b2b2b" }
+    ];
+
+    let index = 0;
+
+    // sapaan otomatis
+    function tampilkanSapaan() {
+      const jam = new Date().getHours();
+      let sapa = "";
+      if (jam < 12) sapa = "Selamat pagi, Mochamad Arya Febryan.";
+      else if (jam < 18) sapa = "Selamat sore, Mochamad Arya Febryan.";
+      else sapa = "Selamat malam, Mochamad Arya Febryan.";
+      greeting.textContent = sapa;
+    }
+
+    // dark mode otomatis
+    function aktifkanDarkModeOtomatis() {
+      const jam = new Date().getHours();
+      if (jam >= 18 || jam < 6) {
+        document.documentElement.style.setProperty("--bg1", "#1f2937");
+        document.documentElement.style.setProperty("--bg2", "#111827");
+        document.documentElement.style.setProperty("--accent", "#9ca3af");
+        document.documentElement.style.setProperty("--text", "#f8fafc");
+        document.documentElement.style.setProperty("--card", "#1e293b");
+        document.documentElement.style.setProperty("--panel-bg", "#374151");
+        document.documentElement.style.setProperty("--panel-text", "#f9fafb");
+      }
+    }
+
+    tampilkanSapaan();
+    aktifkanDarkModeOtomatis();
+
+    // tombol waktu
+    btn.addEventListener("click", () => {
+      const d = new Date();
+      const waktu = d.toLocaleString("id-ID");
+      clock.textContent = "Waktu Sekarang: " + waktu;
+      btn.style.boxShadow = "0 0 10px rgba(100,116,139,0.4)";
+      setTimeout(() => btn.style.boxShadow = "none", 400);
+    });
+
+    // tombol ganti tema
+    themeBtn.addEventListener("click", () => {
+      index = (index + 1) % themes.length;
+      const t = themes[index];
+      document.documentElement.style.setProperty("--bg1", t.bg1);
+      document.documentElement.style.setProperty("--bg2", t.bg2);
+      document.documentElement.style.setProperty("--accent", t.accent);
+      document.documentElement.style.setProperty("--text", t.text);
+      document.documentElement.style.setProperty("--card", t.card);
+      document.documentElement.style.setProperty("--panel-bg", t.panelBg);
+      document.documentElement.style.setProperty("--panel-text", t.panelText);
+      document.body.style.opacity = "0.85";
+      setTimeout(() => (document.body.style.opacity = "1"), 300);
+    });
+  </script>
+
+</body>
+</html>
